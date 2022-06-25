@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "710283125899",
+    "firebase_url": "https://temi-test-1bcbb-default-rtdb.firebaseio.com",
+    "project_id": "temi-test-1bcbb",
+    "storage_bucket": "temi-test-1bcbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710283125899:android:fbb5ba6e83dbb0a2dca08e",
+        "android_client_info": {
+          "package_name": "com.example.temisdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710283125899-au7sd0ctj638hh1epjput8r3t51srgft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP1I6mDCQU6xLICcmrrN3Zp62dVFMmBVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710283125899-au7sd0ctj638hh1epjput8r3t51srgft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/activity_main1.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/activity_main2.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/activity_rfid.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/fail_main.xml" value="0.1" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/light_main.xml" value="0.3132603406326034" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/open1.xml" value="0.17553191489361702" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/open2.xml" value="0.408203125" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/open3.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/open4.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/open_main.xml" value="0.1" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/press_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/sound_main.xml" value="0.18" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/test.xml" value="0.1721014492753623" />
+        <entry key="..\:/Users/jh-va/TemiTest/test/TemiSDK/app/src/main/res/layout/water_main.xml" value="0.17553191489361702" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
