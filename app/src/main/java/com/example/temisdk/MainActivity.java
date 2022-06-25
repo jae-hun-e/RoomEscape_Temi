@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements
         robot.removeOnRobotReadyListener(this);
     }
 
-
     @Override
     public void onRobotReady(boolean isReady) {
         if (isReady) {
@@ -94,18 +93,6 @@ public class MainActivity extends AppCompatActivity implements
     public void onClick(View view) {
         Class exampleContext = null;
         switch (view.getId()) {
-//            case R.id.button1:
-//                exampleContext = MainActivity1.class;
-//                break;
-//            case R.id.button2:
-//                exampleContext = MainActivity2.class;
-//                break;
-//            case R.id.button3:
-//                exampleContext = MainActivity3.class;
-//                break;
-//            case R.id.button4:
-//                exampleContext = MainActivity4.class;
-//                break;
             case R.id.button1:
                 exampleContext = LightActivity.class;
                 break;

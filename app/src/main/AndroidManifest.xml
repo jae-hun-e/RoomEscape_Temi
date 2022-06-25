@@ -22,19 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity1"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".MainActivity2"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".MainActivity3"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".MainActivity4"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".OpenActivity"
+            android:name=".Clear"
             android:launchMode="singleTop" />
         <activity
             android:name=".FailActivity"

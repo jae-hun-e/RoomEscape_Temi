@@ -34,14 +34,15 @@ public class PressActivity extends AppCompatActivity {
         final RoboTemi roboTemi = new RoboTemi();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("sound");
+        DatabaseReference myRef = database.getReference("press_value");
 
         myRef.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 boolean value = dataSnapshot.getValue(boolean.class);
-                Log.d("tag", "SoundValue: " + value);
+                Log.d("tag", "press_value: " + value);
+
                 // door open
                 if(value == true){
                     Log.d("tag","true");
@@ -58,6 +59,7 @@ public class PressActivity extends AppCompatActivity {
                         }
                     });
                 }
+
                 // door close
                 else{
                     Log.d("tag", "false");
@@ -88,7 +90,8 @@ public class PressActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
     }

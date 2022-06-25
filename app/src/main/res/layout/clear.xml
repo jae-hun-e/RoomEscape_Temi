@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textTitle"
+        android:id="@+id/textState"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OPEN!"
+        android:text="ALL ClEAR!!! 탈출을 축하드려요~~"
         android:textSize="80sp"
         android:textStyle="bold"
         android:gravity="center"

@@ -56,7 +56,8 @@ public class RFIDActivity extends AppCompatActivity {
         });
     }
     public void onClick(View view) {
-        finish();
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
     }
 
 

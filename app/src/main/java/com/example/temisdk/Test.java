@@ -11,9 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.robotemi.sdk.Robot;
 import com.robotemi.sdk.UserInfo;
-import com.robotemi.sdk.model.CallEventModel;
-
-import org.jetbrains.annotations.NotNull;
 
 
 public class Test extends AppCompatActivity {
@@ -26,7 +23,7 @@ public class Test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.open_main);
+        setContentView(R.layout.clear);
         textState = findViewById(R.id.textState);
         buttonBack = findViewById(R.id.buttonBack);
 

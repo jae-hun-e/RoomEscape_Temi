@@ -25,7 +25,7 @@ public class WaterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sound_main);
+        setContentView(R.layout.water_main);
 
         nextStage = findViewById(R.id.buttonOpen);
         buttonFollow = findViewById(R.id.buttonFollow);
@@ -34,18 +34,16 @@ public class WaterActivity extends AppCompatActivity {
         final RoboTemi roboTemi = new RoboTemi();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("sound");
+        DatabaseReference myRef = database.getReference("water_value");
 
         myRef.addValueEventListener(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 boolean value = dataSnapshot.getValue(boolean.class);
-                Log.d("tag", "SoundValue: " + value);
+                Log.d("tag", "water_value: " + value);
                 // door open
                 if(value == true){
                     Log.d("tag","true");
-
                     // nextStage 숨김해제
                     nextStage.setVisibility(View.VISIBLE);
 
@@ -88,7 +86,8 @@ public class WaterActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
     }

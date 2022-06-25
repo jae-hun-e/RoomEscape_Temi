@@ -23,6 +23,10 @@ public class LightActivity extends AppCompatActivity {
     Button nextStage;
     Button buttonFollow;
     Button buttonBack;
+    boolean light1 = false;
+    boolean light2 = false;
+    boolean light3 = false;
+    boolean returnValse = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +40,21 @@ public class LightActivity extends AppCompatActivity {
         final RoboTemi roboTemi = new RoboTemi();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("light_value1");
+        DatabaseReference myRef1 = database.getReference("light_value_1");
+        DatabaseReference myRef2 = database.getReference("light_value_2");
+        DatabaseReference myRef3 = database.getReference("light_value_3");
+        DatabaseReference light = database.getReference("light");
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef1.addValueEventListener(new ValueEventListener() {
             @Override
-
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 boolean light_value1 = dataSnapshot.getValue(boolean.class);
+                light1 = light_value1;
                 Log.d("tag", "light_value1" + light_value1);
+
                 // door open
-                if(light_value1 != true){
+                if(light_value1 == true){
                     Log.d("tag","true");
 
                     // nextStage 숨김해제
@@ -61,12 +69,7 @@ public class LightActivity extends AppCompatActivity {
                         }
                     });
                 }
-                // door close
-                else{
-                    Log.d("tag", "false");
-                    // nextStage 숨김
-                    nextStage.setVisibility(View.INVISIBLE);
-                }
+
             }
 
             @Override
@@ -74,6 +77,52 @@ public class LightActivity extends AppCompatActivity {
                 System.out.println("error"+ databaseError.toException());
             }
         });
+
+        myRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                boolean light_value2 = dataSnapshot.getValue(boolean.class);
+                light2 = light_value2;
+                Log.d("tag", "light_value2" + light_value2);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("error"+ databaseError.toException());
+            }
+        });
+
+        myRef3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                boolean light_value3 = dataSnapshot.getValue(boolean.class);
+                light3 = light_value3;
+                Log.d("tag", "light_value3" + light_value3);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("error"+ databaseError.toException());
+            }
+        });
+
+//        light.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                boolean returnValse = dataSnapshot.getValue(child(users1));
+//
+//                Log.d("tag", "light" + light);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                System.out.println("error"+ databaseError.toException());
+//            }
+//        });
 
         buttonFollow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +140,8 @@ public class LightActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
 

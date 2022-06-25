@@ -1,5 +1,6 @@
 package com.example.temisdk;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class OpenActivity extends AppCompatActivity {
+public class Clear extends AppCompatActivity {
 
     TextView textState;
     Button buttonBack;
@@ -17,14 +18,15 @@ public class OpenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.open_main);
+        setContentView(R.layout.clear);
         textState = findViewById(R.id.textState);
         buttonBack = findViewById(R.id.buttonBack);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
     }
