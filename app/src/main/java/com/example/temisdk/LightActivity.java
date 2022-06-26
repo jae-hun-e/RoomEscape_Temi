@@ -26,7 +26,7 @@ public class LightActivity extends AppCompatActivity {
     boolean light1 = false;
     boolean light2 = false;
     boolean light3 = false;
-    boolean returnValse = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +43,19 @@ public class LightActivity extends AppCompatActivity {
         DatabaseReference myRef1 = database.getReference("light_value_1");
         DatabaseReference myRef2 = database.getReference("light_value_2");
         DatabaseReference myRef3 = database.getReference("light_value_3");
-        DatabaseReference light = database.getReference("light");
+        DatabaseReference switch_value = database.getReference("switch_value");
 
-        myRef1.addValueEventListener(new ValueEventListener() {
+
+        switch_value.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                boolean light_value1 = dataSnapshot.getValue(boolean.class);
-                light1 = light_value1;
-                Log.d("tag", "light_value1" + light_value1);
+                boolean switch_value = dataSnapshot.getValue(boolean.class);
+                light1 = switch_value;
+                Log.d("tag", "light_value1" + switch_value);
 
                 // door open
-                if(light_value1 == true){
+                if(switch_value == true){
                     Log.d("tag","true");
 
                     // nextStage 숨김해제
@@ -69,6 +70,51 @@ public class LightActivity extends AppCompatActivity {
                         }
                     });
                 }
+                // door close
+                else{
+                    Log.d("tag", "false");
+                    // nextStage 숨김
+                    nextStage.setVisibility(View.INVISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("error"+ databaseError.toException());
+            }
+        });
+
+        myRef1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                boolean light_value1 = dataSnapshot.getValue(boolean.class);
+                light1 = light_value1;
+                Log.d("tag", "light_value1" + light_value1);
+
+//                // door open
+//                if(light_value1 == true){
+//                    Log.d("tag","true");
+//
+//                    // nextStage 숨김해제
+//                    nextStage.setVisibility(View.VISIBLE);
+//
+//                    // nextStage누르면 open view이동
+//                    nextStage.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            Intent intent = new Intent(getApplicationContext(),Open1.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                }
+//                // door close
+//                else{
+//                    Log.d("tag", "false");
+//                    // nextStage 숨김
+//                    nextStage.setVisibility(View.INVISIBLE);
+//                }
 
             }
 
